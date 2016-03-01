@@ -7,6 +7,7 @@ import java.io.IOException;
 
 public class WCReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 	public void reduce(Text key, Iterable<IntWritable> values, Mapper.Context context) throws IOException, InterruptedException {
+		System.out.println("KEY: " + key);
 		int count = 0;
 		for (IntWritable value : values) {
 			count += value.get(); 
