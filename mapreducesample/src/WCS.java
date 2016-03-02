@@ -38,7 +38,7 @@ public class WCS {
     }
 
     public static void main(String[] args) throws Exception {
-        JobConf conf = new JobConf(WordCount.class);
+        JobConf conf = new JobConf(WCS.class);
         conf.setJobName("wordcount source");
 
         conf.setOutputKeyClass(Text.class);
