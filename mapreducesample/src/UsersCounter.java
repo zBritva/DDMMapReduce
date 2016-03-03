@@ -77,7 +77,7 @@ public class UsersCounter {
         conf.setJobName("user counter");
 
         conf.setOutputKeyClass(Text.class);
-        conf.setOutputValueClass(IntWritable.class);
+        conf.setOutputValueClass(Text.class);
 
 
         MultipleInputs.addInputPath(conf, p1, TextInputFormat.class, CountryMap.class);
