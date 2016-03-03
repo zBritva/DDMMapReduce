@@ -19,11 +19,11 @@ import java.util.StringTokenizer;
 
 public class UsersCounter {
 
-    public static class LogMap extends MapReduceBase implements Mapper<Text, Text, Text, IntWritable> {
+    public static class LogMap extends MapReduceBase implements Mapper<Text, Text, Text, Text> {
         private String ip, user = new String();
-        private IntWritable one = new IntWritable(1);
+        private Text one = new Text("1");
 
-        public void map(Text key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
+        public void map(Text key, Text value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
             String line = value.toString();
             String[] data = line.split("\t");
 
@@ -33,10 +33,10 @@ public class UsersCounter {
         }
     }
 
-    public static class CountryMap extends MapReduceBase implements Mapper<LongWritable, Text, Text, Text> {
+    public static class CountryMap extends MapReduceBase implements Mapper<Text, Text, Text, Text> {
         private String ip, country = new String();
 
-        public void map(LongWritable key, Text value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
+        public void map(Text key, Text value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
             String line = value.toString();
             String[] data = line.split("\t");
 
