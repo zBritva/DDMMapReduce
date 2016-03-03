@@ -1,2 +1,0 @@
-Hello Ilmenau! Hello World Example of Spark on Java
-It is first example of spark application 
