@@ -2,12 +2,9 @@
  * Created by zbritva on 02.03.16.
  */
 
-import org.apache.commons.logging.Log;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.mapred.lib.MultipleInputs;
@@ -15,7 +12,6 @@ import org.apache.hadoop.util.GenericOptionsParser;
 
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.StringTokenizer;
 
 public class UsersCounter {
 
