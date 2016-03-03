@@ -79,11 +79,11 @@ public class UsersCounter {
         MultipleInputs.addInputPath(conf, p1, TextInputFormat.class, CountryMap.class);
         MultipleInputs.addInputPath(conf,p2, TextInputFormat.class, LogMap.class);
         //conf.setMapperClass(Map.class);
-        //conf.setCombinerClass(WCS.Reduce.class);
+        conf.setCombinerClass(WCS.Reduce.class);
         conf.setReducerClass(Reduce.class);
 
         //conf.setInputFormat(TextInputFormat.class);
-        conf.setOutputFormat(TextOutputFormat.class);
+        //conf.setOutputFormat(TextOutputFormat.class);
 
         //FileInputFormat.setInputPaths(conf, new Path(args[0]));
         FileOutputFormat.setOutputPath(conf, p3);
